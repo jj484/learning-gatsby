@@ -6,6 +6,8 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import Video from "../components/video"
 
+import "typeface-roboto"
+
 const IndexPage = () => (
   <Layout>
     <div>
@@ -13,9 +15,9 @@ const IndexPage = () => (
         data={{
           title: "Youtube Video Looper",
           videoURL:
-            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1%playlist=dQw4w9WgXcQ",
+            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1&playlist=dQw4w9WgXcQ",
           formmatedURL:
-            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1%playlist=dQw4w9WgXcQ",
+            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1&playlist=dQw4w9WgXcQ",
         }}
       />
     </div>
