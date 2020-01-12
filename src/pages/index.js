@@ -14,6 +14,8 @@ const IndexPage = () => (
           title: "Youtube Video Looper",
           videoURL:
             "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1%playlist=dQw4w9WgXcQ",
+          formmatedURL:
+            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1%playlist=dQw4w9WgXcQ",
         }}
       />
     </div>

@@ -7,6 +7,7 @@ export default class Video extends React.Component {
     this.state = {
       title: this.props.data.title,
       videoURL: this.props.data.videoURL,
+      formmatedURL: this.props.data.videoURL,
     }
 
     this.onClick = this.onClick.bind(this)
@@ -18,10 +19,16 @@ export default class Video extends React.Component {
 
   handleChange(event) {
     this.setState({
-      videoURL:
-        event.target.value.replace("watch?v=", "embed/") +
-        "?loop=1&playlist=" +
-        event.target.value.replace("https://www.youtube.com/watch?v=", ""),
+      videoURL: event.target.value.includes("https: //www.youtu.be/")
+        ? event.target.value.replace(
+            "https://www.youtu.be/",
+            "https://www.youtube.com/embed/"
+          ) +
+          "?loop=1&playlist=" +
+          event.target.value.replace("https://www.youtube.com/watch?v=", "")
+        : event.target.value.replace("watch?v=", "embed/") +
+          "?loop=1&playlist=" +
+          event.target.value.replace("https://www.youtube.com/watch?v=", ""),
     })
   }
 
@@ -43,9 +50,7 @@ export default class Video extends React.Component {
         <h1>{this.state.title}</h1>
         <p>The video will loop indefinitely!</p>
 
-        {/*
-        <p>Formmated URL: {this.state.videoURL}</p>
-        */}
+        <p>Formmated URL: {this.state.formmatedURL}</p>
 
         <iframe
           width="941"
