@@ -9,7 +9,13 @@ import Video from "../components/video"
 const IndexPage = () => (
   <Layout>
     <div>
-      <Video />
+      <Video
+        data={{
+          title: "Youtube Video Looper",
+          videoURL:
+            "https://www.youtube.com/embed/dQw4w9WgXcQ?loop=1%playlist=dQw4w9WgXcQ",
+        }}
+      />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
