@@ -55,7 +55,7 @@ export default class Video extends React.Component {
         <iframe
           width="941"
           height="539"
-          src={this.state.videoURL}
+          src={this.state.formmatedURL}
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
