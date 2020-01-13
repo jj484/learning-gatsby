@@ -31,23 +31,21 @@ const Layout = ({ children }) => {
       {/*
       <Header siteTitle={data.site.siteMetadata.title} />
       */}
-      <div
-        style={{
-          flex: 1,
-        }}
-      >
+      <div>
         <AppBar position="static" color="primary">
           <Toolbar>{/* content */}</Toolbar>
           <Typography
-            variant="h5"
+            variant="h2"
             noWrap
             style={{
               textAlign: "center",
               width: "100%",
+              paddingBottom: "0.5%",
             }}
           >
             Youtube Video Looper
           </Typography>
+
           <a href="https://github.com/jj484/learning-gatsby">
             <svg
               id="i-github"

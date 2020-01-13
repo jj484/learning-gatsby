@@ -1,6 +1,7 @@
 import React from "react"
 import Button from "@material-ui/core/Button"
 import TextField from "@material-ui/core/TextField"
+import { Typography } from "@material-ui/core/"
 import "typeface-roboto"
 
 export default class Video extends React.Component {
@@ -50,12 +51,25 @@ export default class Video extends React.Component {
           />
         </form>
 
-        <Button onClick={this.buttonClick} variant="contained" color="primary">
-          Go!
-        </Button>
+        <div style={{ paddingBottom: "1%" }}>
+          <Button
+            onClick={this.buttonClick}
+            variant="contained"
+            color="primary"
+          >
+            Go!
+          </Button>
+        </div>
 
         <br></br>
-        <p>The video will loop indefinitely!</p>
+        <Typography
+          variant="body1"
+          style={{ paddingBottom: "2%", paddingTop: "1%" }}
+        >
+          Enter the URL of a YouTube video and press go! The YouTube video will
+          loop indefinitely! <br />
+          eg: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        </Typography>
 
         {/*
         <p>Formmated URL: {this.state.formmatedURL}</p>
