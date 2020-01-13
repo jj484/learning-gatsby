@@ -1,18 +1,21 @@
 import React from "react"
+import Button from "@material-ui/core/Button"
+import TextField from "@material-ui/core/TextField"
+import "typeface-roboto"
 
 export default class Video extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      title: this.props.data.title,
       videoURL: this.props.data.videoURL,
-      formmatedURL: this.props.data.videoURL,
+      formmatedURL: this.props.data.formmatedURL,
+      submitURL: this.props.data.submitURL,
     }
 
     this.onClick = this.onClick.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.buttonClick = this.buttonClick.bind(this)
   }
 
   onClick() {}
@@ -31,23 +34,27 @@ export default class Video extends React.Component {
           event.target.value.replace("https://www.youtube.com/watch?v=", ""),
     })
   }
-
-  handleSubmit(event) {}
+  buttonClick() {
+    this.setState({ submitURL: this.state.formmatedURL })
+  }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          Enter a YouTube Video URL <br></br>
-          <input
-            type="text"
+        <form>
+          <TextField
+            required
             value={this.state.value}
             onChange={this.handleChange}
+            label="Enter a YouTube Link"
           />
-          <br></br>
         </form>
+
+        <Button onClick={this.buttonClick} variant="contained" color="primary">
+          Go!
+        </Button>
+
         <br></br>
-        <h1>{this.state.title}</h1>
         <p>The video will loop indefinitely!</p>
 
         {/*
@@ -55,9 +62,12 @@ export default class Video extends React.Component {
         */}
 
         <iframe
-          width="941"
+          style={{
+            width: "100%",
+            position: "relative",
+          }}
           height="539"
-          src={this.state.formmatedURL}
+          src={this.state.submitURL}
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
